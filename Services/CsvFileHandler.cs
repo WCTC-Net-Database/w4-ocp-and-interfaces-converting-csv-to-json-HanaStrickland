@@ -36,8 +36,30 @@ public class CsvFileHandler : IFileHandler
 
     public void WriteCharacters(string filePath, List<Character> characters)
     {
-        // TODO: Implement CSV writing logic
-        throw new NotImplementedException();
+        foreach(var character in CharactersList)
+        {
+            string nameString;
+
+            if (character.CharacterName.Contains(","))
+            {
+                nameString = $"\"{character.CharacterName}\"";
+            }
+            else
+            {
+                nameString = character.CharacterName;
+            }
+
+            string pipeDelimitedChoicesString = string.Join("|", character.CharacterEquipment);
+
+            string lineToAdd = $"{nameString},{character.CharacterClass},{character.CharacterLevel},{character.CharacterHitPoints},{pipeDelimitedChoicesString}";
+            
+            OutputList.Add(lineToAdd);
+        }
+        using (StreamWriter outputFile = new StreamWriter("WriteLines.txt"))
+            {
+                foreach (string line in OutputList)
+                    outputFile.WriteLine(line);
+            }
     }
 
     public string GetName(string line)
