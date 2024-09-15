@@ -11,7 +11,7 @@ class Program
 
     static void Main()
     {
-        string filePath = "input.csv"; // Default to CSV file
+        string filePath = "Files/input.csv"; // Default to CSV file
         fileHandler = new CsvFileHandler(); // Default to CSV handler
         characters = fileHandler.ReadCharacters(filePath);
 
@@ -50,7 +50,7 @@ class Program
     {
         foreach (var character in characters)
         {
-            Console.WriteLine($"Name: {character.Name}, Class: {character.Class}, Level: {character.Level}, HP: {character.HP}, Equipment: {string.Join(", ", character.Equipment)}");
+            Console.WriteLine($"Name: {character.CharacterName}, Class: {character.CharacterClass}, Level: {character.CharacterLevel}, HP: {character.CharacterHitPoints}, Equipment: {string.Join(", ", character.CharacterEquipment)}");
         }
     }
 
@@ -66,7 +66,7 @@ class Program
         Console.Write("Enter the name of the character to level up: ");
         string nameToLevelUp = Console.ReadLine();
 
-        var character = characters.Find(c => c.Name.Equals(nameToLevelUp, StringComparison.OrdinalIgnoreCase));
+        var character = characters.Find(c => c.CharacterName.Equals(nameToLevelUp, StringComparison.OrdinalIgnoreCase));
         if (character != null)
         {
             // TODO: Implement logic to level up the character
