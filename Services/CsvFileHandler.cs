@@ -36,7 +36,7 @@ public class CsvFileHandler : IFileHandler
 
     public void WriteCharacters(string filePath, List<Character> characters)
     {
-        foreach(var character in CharactersList)
+        foreach(var character in characters)
         {
             string nameString;
 
@@ -108,6 +108,51 @@ public class CsvFileHandler : IFileHandler
         string[] heroEquipmentArray = heroEquipmentString.Split('|');
 
         return (heroClass, level, hitPoints, heroEquipmentArray);
+
+    }
+
+    public void DisplayCharacterNamesMenu()
+    {
+        CharacterNamesList = new List<string>();
+
+        foreach (var character in CharactersList)
+
+        {
+            CharacterNamesList.Add(character.CharacterName);
+        }
+
+        for (int i = 0; i < CharacterNamesList.Count; i++)
+        {
+            Console.WriteLine($"{i+1}: {CharacterNamesList[i]}");
+        }
+    }
+
+    public Character FindCharacter(string choice)
+    {
+        int indexToFind = Convert.ToInt16(choice) - 1;
+        string NameToFind = CharacterNamesList[indexToFind];
+        var foundCharacter = CharactersList.Where(c => c.CharacterName == NameToFind).FirstOrDefault();
+        return foundCharacter;
+    }
+
+    public void DisplayCharacters()
+    {
+        foreach (var character in CharactersList)
+            {
+                Console.WriteLine($"Name: {character.CharacterName}; Class: {character.CharacterClass}; Level: {character.CharacterLevel}; Hit Points: {character.CharacterHitPoints};  Equipment: {string.Join(", ", character.CharacterEquipment)}");
+            }
+    }
+
+    public void AddCharacter(string newCharacter, string newClass, string[] choicesArray)
+    {
+        CharactersList.Add(new Character()
+            {
+                CharacterName = newCharacter,
+                CharacterClass = newClass,
+                CharacterLevel = 1,
+                CharacterHitPoints = 10,
+                CharacterEquipment = choicesArray
+            });
 
     }
 }

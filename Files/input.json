@@ -1,37 +1,37 @@
 ﻿[
   {
-    "Name": "John, Brave",
-    "Class": "Fighter",
-    "Level": "1",
-    "HP": "10",
-    "Equipment": "sword|shield|potion"
+    "CharacterName": "John, Brave",
+    "CharacterClass": "Fighter",
+    "CharacterLevel": "1",
+    "CharacterHitPoints": "10",
+    "CharacterEquipment": ["sword","shield","potion"]
   },
   {
-    "Name": "Jane",
-    "Class": "Wizard",
-    "Level": "2",
-    "HP": "6",
-    "Equipment": "staff|robe|book"
+    "CharacterName": "Jane",
+    "CharacterClass": "Wizard",
+    "CharacterLevel": "2",
+    "CharacterHitPoints": "6",
+    "CharacterEquipment": ["staff","robe","book"]
   },
   {
-    "Name": "Bob, Sneaky",
-    "Class": "Rogue",
-    "Level": "3",
-    "HP": "8",
-    "Equipment": "dagger|lockpick|cloak"
+    "CharacterName": "Bob, Sneaky",
+    "CharacterClass": "Rogue",
+    "CharacterLevel": "3",
+    "CharacterHitPoints": "8",
+    "CharacterEquipment": ["dagger","lockpick","cloak"]
   },
   {
-    "Name": "Alice",
-    "Class": "Cleric",
-    "Level": "4",
-    "HP": "12",
-    "Equipment": "mace|armor|potion"
+    "CharacterName": "Alice",
+    "CharacterClass": "Cleric",
+    "CharacterLevel": "4",
+    "CharacterHitPoints": "12",
+    "CharacterEquipment": ["mace","armor","potion"]
   },
   {
-    "Name": "Reginald III, Sir",
-    "Class": "Knight",
-    "Level": "5",
-    "HP": "20",
-    "Equipment": "sword|armor|horse"
+    "CharacterName": "Reginald III, Sir",
+    "CharacterClass": "Knight",
+    "CharacterLevel": "5",
+    "CharacterHitPoints": "20",
+    "CharacterEquipment": ["sword","armor","horse"]
   }
 ]
