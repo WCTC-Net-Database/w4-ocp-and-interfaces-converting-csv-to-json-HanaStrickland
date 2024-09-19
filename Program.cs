@@ -52,10 +52,7 @@ class Program
 
     static void DisplayAllCharacters()
     {
-        foreach (var character in characters)
-        {
-            Console.WriteLine($"Name: {character.CharacterName}; Class: {character.CharacterClass}; Level: {character.CharacterLevel}; HP: {character.CharacterHitPoints}; Equipment: {string.Join(", ", character.CharacterEquipment)}");
-        }
+        fileHandler.DisplayCharacters();
     }
 
     static void AddCharacter()
