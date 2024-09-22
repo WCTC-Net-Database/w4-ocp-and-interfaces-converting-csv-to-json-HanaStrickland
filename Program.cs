@@ -13,8 +13,8 @@ class Program
 
     static void Main()
     {
-        string filePath = "Files/input.csv"; // Default to CSV file
-        fileHandler = new CsvFileHandler(); // Default to CSV handler
+        string filePath = "Files/input.json"; // Default to CSV file
+        fileHandler = new JsonFileHandler(); // Default to CSV handler
         characters = fileHandler.ReadCharacters(filePath);
         equipmentManager = new EquipmentManager();
         characterClassManager = new CharcaterClassManager();
@@ -130,32 +130,5 @@ class Program
             Console.WriteLine("Character not found.");
         }
     }
-
-    public class CharcaterClassManager
-{
-    public string[] CharacterClassOptions {get;set;} = {"Cleric", "Fighter", "Rogue", "Wizard"};
-
-    public void DisplayCharacterClassMenu()
-    {
-        for (int i = 0; i < CharacterClassOptions.Length; i++)
-        {
-            Console.WriteLine($"{i+1}: {CharacterClassOptions[i]}");
-        }
-    }
-}
-
-    public class EquipmentManager
-{
-    public string[] EquipmentOptions {get;set;} = {"Armor","Book","Cloak","Dagger","Horse","Lockpick","Mace","Potion","Robe","Shield","Staff","Sword"};
-
-    
-    public void DisplayEquipmentMenu()
-    {
-        for (int i = 0; i < EquipmentOptions.Length; i++)
-            {
-                Console.WriteLine($"{i+1}: {EquipmentOptions[i]}");
-            }
-    }
-}
  
 }
